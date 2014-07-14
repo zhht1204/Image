@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="zht.c2.imagedeal.imageDealGui">
+  <grid id="27dc6" binding="jPanel" layout-manager="GridLayoutManager" row-count="6" column-count="10" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="10" left="10" bottom="10" right="10"/>
+    <constraints>
+      <xy x="20" y="20" width="2434" height="663"/>
+    </constraints>
+    <properties>
+      <background color="-1"/>
+      <font name="新宋体" size="14"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <component id="eff99" class="javax.swing.JLabel" binding="wenjianlujing">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="文件路径："/>
+        </properties>
+      </component>
+      <vspacer id="dda31">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+            <preferred-size width="-1" height="10"/>
+          </grid>
+        </constraints>
+      </vspacer>
+      <component id="b9b6" class="javax.swing.JTextField" binding="filePathField">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="7" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="300" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="e5539" class="javax.swing.JButton" binding="fileSelectButton">
+        <constraints>
+          <grid row="0" column="9" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="选择文件"/>
+        </properties>
+      </component>
+      <toolbar id="15e36" binding="mainToolBar">
+        <constraints>
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="-1" height="20"/>
+          </grid>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="eb2e5" class="javax.swing.JButton" binding="CWRotateButton">
+            <constraints/>
+            <properties>
+              <text value="顺时针旋转90°"/>
+            </properties>
+          </component>
+          <hspacer id="69fa1">
+            <constraints/>
+          </hspacer>
+          <component id="e2dac" class="javax.swing.JButton" binding="ACWRotateButton">
+            <constraints/>
+            <properties>
+              <text value="逆时针旋转90°"/>
+            </properties>
+          </component>
+          <hspacer id="1ec33">
+            <constraints/>
+          </hspacer>
+          <component id="a0e84" class="javax.swing.JButton" binding="horizonallyReverseButton">
+            <constraints/>
+            <properties>
+              <text value="水平翻转"/>
+            </properties>
+          </component>
+          <hspacer id="eb4c5">
+            <constraints/>
+          </hspacer>
+          <component id="1054b" class="javax.swing.JButton" binding="verticallyReverseButton">
+            <constraints/>
+            <properties>
+              <text value="竖直翻转"/>
+            </properties>
+          </component>
+        </children>
+      </toolbar>
+      <hspacer id="94a8a">
+        <constraints>
+          <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="10" height="-1"/>
+          </grid>
+        </constraints>
+      </hspacer>
+      <component id="a5086" class="javax.swing.JLabel" binding="fangda">
+        <constraints>
+          <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="放大"/>
+        </properties>
+      </component>
+      <component id="4a65" class="javax.swing.JSpinner" binding="numberSpinner">
+        <constraints>
+          <grid row="2" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="40" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="f6e96" class="javax.swing.JLabel" binding="bei">
+        <constraints>
+          <grid row="2" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="倍"/>
+        </properties>
+      </component>
+      <toolbar id="78a52" binding="saveToolBar">
+        <constraints>
+          <grid row="2" column="8" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="-1" height="20"/>
+          </grid>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="2e255" class="javax.swing.JButton" binding="saveButton">
+            <constraints/>
+            <properties>
+              <text value="保存"/>
+            </properties>
+          </component>
+          <hspacer id="aa234">
+            <constraints/>
+          </hspacer>
+          <component id="2020d" class="javax.swing.JButton" binding="saveToButton">
+            <constraints/>
+            <properties>
+              <text value="另存为"/>
+            </properties>
+          </component>
+        </children>
+      </toolbar>
+      <hspacer id="1af24">
+        <constraints>
+          <grid row="0" column="8" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+      <vspacer id="b3160">
+        <constraints>
+          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+            <preferred-size width="-1" height="10"/>
+          </grid>
+        </constraints>
+      </vspacer>
+      <component id="12765" class="javax.swing.JLabel" binding="tempPictureLabel">
+        <constraints>
+          <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="-1" height="200"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="49cbe" class="javax.swing.JLabel" binding="originalPictureLabel">
+        <constraints>
+          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="-1" height="200"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value=""/>
+        </properties>
+      </component>
+      <hspacer id="c8e4d">
+        <constraints>
+          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="40" height="-1"/>
+          </grid>
+        </constraints>
+      </hspacer>
+      <component id="827bf" class="javax.swing.JLabel" binding="yuantu">
+        <constraints>
+          <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="原图"/>
+        </properties>
+      </component>
+      <component id="a1ade" class="javax.swing.JButton" binding="showButton">
+        <constraints>
+          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="显示"/>
+        </properties>
+      </component>
+      <component id="4484c" class="javax.swing.JLabel" binding="xianshi">
+        <constraints>
+          <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="显示"/>
+        </properties>
+      </component>
+      <component id="77719" class="javax.swing.JButton" binding="zoomConfirmButton">
+        <constraints>
+          <grid row="2" column="7" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="确认"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
