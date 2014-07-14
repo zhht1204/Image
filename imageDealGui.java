@@ -44,7 +44,7 @@ public class imageDealGui {
 			public void actionPerformed(ActionEvent e) {
 				JFileChooser fileChooser = new JFileChooser();
 				fileChooser.setFileFilter(new FileNameExtensionFilter(
-						"Ö§³ÖµÄÍ¼ÏñÎÄ¼ş(*.jpg¡¢ *.png¡¢*.bmp)", "jpg", "png", "bmp"
+						"æ”¯æŒçš„å›¾åƒæ–‡ä»¶(*.jpgã€ *.pngã€*.bmp)", "jpg", "png", "bmp"
 				));
 				int returnVal = fileChooser.showOpenDialog(fileChooser);
 				if(returnVal == JFileChooser.APPROVE_OPTION) {
@@ -175,14 +175,14 @@ public class imageDealGui {
 				try {
 					mulriple = Integer.parseInt(numberSpinner.getValue().toString());
 				} catch (NumberFormatException nfe) {
-					JOptionPane.showMessageDialog(null, "ÇëÊäÈëÓĞĞ§µÄËõ·Å±¶Êı£¡", "Ëõ·Å±¶Êı´íÎó", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "è¯·è¾“å…¥æœ‰æ•ˆçš„ç¼©æ”¾å€æ•°ï¼", "ç¼©æ”¾å€æ•°é”™è¯¯", JOptionPane.ERROR_MESSAGE);
 				}
 				if(mulriple >= 0) {
 					ip.magnify(mulriple);
-					JOptionPane.showMessageDialog(null, "·Å´ó³É¹¦£¡", "¹§Ï²", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null, "æ”¾å¤§æˆåŠŸï¼", "æ­å–œ", JOptionPane.INFORMATION_MESSAGE);
 				} else {
 					ip.shrink(Math.abs(mulriple));
-					JOptionPane.showMessageDialog(null, "ËõĞ¡³É¹¦£¡", "¹§Ï²", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null, "ç¼©å°æˆåŠŸï¼", "æ­å–œ", JOptionPane.INFORMATION_MESSAGE);
 				}
 				Image.saveImage(temp.getRgbArray(), image.getParentPath() + "~temp.bmp");
 			}
@@ -192,7 +192,7 @@ public class imageDealGui {
 			public void mouseClicked(MouseEvent e) {
 				super.mouseClicked(e);
 				JFileChooser fileChooser = new JFileChooser();
-				fileChooser.setFileFilter(new FileNameExtensionFilter("±£´æÎª(*.bmp)", "bmp"));
+				fileChooser.setFileFilter(new FileNameExtensionFilter("ä¿å­˜ä¸º(*.bmp)", "bmp"));
 				int returnVal = fileChooser.showSaveDialog(fileChooser);
 				if(returnVal == JFileChooser.APPROVE_OPTION) {
 					File saveFile = new File(fileChooser.getSelectedFile().toString());
@@ -215,7 +215,7 @@ public class imageDealGui {
 	}
 
 	public static void main(String[] args) {
-		JFrame frame = new JFrame("Í¼Ïñ´¦Àí³ÌĞò");
+		JFrame frame = new JFrame("å›¾åƒå¤„ç†ç¨‹åº");
 		frame.setContentPane(new imageDealGui().jPanel);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.pack();

@@ -39,12 +39,12 @@ public class ImageProcesser {
 		Image.saveImage(randomImg, this.tempDirectory + fileName);
 	}
 
-	/*¢ÙĞı×ª£¨Ä¬ÈÏÈÆÖĞĞÄ£©£¨angleÎªÕıÊ±Ë³Ê±Õë£©*/
+	/*â‘ æ—‹è½¬ï¼ˆé»˜è®¤ç»•ä¸­å¿ƒï¼‰ï¼ˆangleä¸ºæ­£æ—¶é¡ºæ—¶é’ˆï¼‰*/
 	public void rotate(int angle) {
 		int width = image.getWidth();
 		int height = image.getHeight();
 		if (angle % 90 != 0) {
-			System.err.print("ÇëÖ¸¶¨½Ç¶ÈÎª90µÄ±¶Êı¡£");
+			System.err.print("è¯·æŒ‡å®šè§’åº¦ä¸º90çš„å€æ•°ã€‚");
 			return;
 		} else {
 			int[][][] result = new int[width][height][3];
@@ -72,7 +72,7 @@ public class ImageProcesser {
 		}
 	}
 
-	/*¢Ú·­×ª£¨Èô²ÎÊıÖ¸¶¨Îªtrue£¬ÔòÎª´¹Ö±·­×ª£»Îªfalse£¬ÔòÎªË®Æ½·­×ª£©*/
+	/*â‘¡ç¿»è½¬ï¼ˆè‹¥å‚æ•°æŒ‡å®šä¸ºtrueï¼Œåˆ™ä¸ºå‚ç›´ç¿»è½¬ï¼›ä¸ºfalseï¼Œåˆ™ä¸ºæ°´å¹³ç¿»è½¬ï¼‰*/
 	public void reverse(boolean reverserVertically) {
 		int width = image.getWidth();
 		int height = image.getHeight();
@@ -95,18 +95,18 @@ public class ImageProcesser {
 		Image.saveImage(image.getRgbArray(), tempDirectory.toString() + "~temp.bmp");
 	}
 
-	/*¢Û·Ö¸îÍ¼Æ¬*/
+	/*â‘¢åˆ†å‰²å›¾ç‰‡*/
 	public void divide(int m, int n, int p, int q) {
 		/**
-		 * @param m ×ÓÍ¼¿í
-		 * @param n ×ÓÍ¼¸ß
-		 * @param p Ë®Æ½ÖØµşÏñËØÊı
-		 * @param q ×İÏòÖØµşÏñËØÊı
+		 * @param m å­å›¾å®½
+		 * @param n å­å›¾é«˜
+		 * @param p æ°´å¹³é‡å åƒç´ æ•°
+		 * @param q çºµå‘é‡å åƒç´ æ•°
 		 */
 		int width = image.getWidth();
 		int height = image.getHeight();
 		if (m <= 0 || n <= 0 || p < 0 || q < 0) {
-			System.out.println("²ÎÊı²»ÕıÈ·£¬ÇëÊäÈëÓĞĞ§²ÎÊı£¡");
+			System.out.println("å‚æ•°ä¸æ­£ç¡®ï¼Œè¯·è¾“å…¥æœ‰æ•ˆå‚æ•°ï¼");
 		} else if (m >= width && n >= height) {
 			Image.saveImage(image.getRgbArray(), "div.bmp");
 		} else {
@@ -119,7 +119,7 @@ public class ImageProcesser {
 				q = 0;
 			}
 			if (p >= m || q >= n) {
-				System.out.println("ÖØµşÏñËØÌ«´ó£¬ÇëÖØĞÂÊäÈë");
+				System.out.println("é‡å åƒç´ å¤ªå¤§ï¼Œè¯·é‡æ–°è¾“å…¥");
 			}
 			int[][][] dividedImg = new int[n][m][3];
 			int divNumW = ((width - m) / (m - p)) + 1;
@@ -129,7 +129,7 @@ public class ImageProcesser {
 			for (int i = 0; i <= divNumH; i++) {
 				for (int j = 0; j <= divNumW; j++) {
 					if (i < divNumH && j < divNumW) {
-						//ÎŞ¶àÓàÇé¿ö
+						//æ— å¤šä½™æƒ…å†µ
 						for (int k = 0; k < n; k++) {
 							for (int l = 0; l < m; l++) {
 								dividedImg[k][l] = image.getRgbArray()[i * (n - q) + k][j * (m - p) + l];
@@ -137,7 +137,7 @@ public class ImageProcesser {
 						}
 						Image.saveImage(dividedImg, tempDirectory + "div" + (i + 1) + "-" + (j + 1) + ".bmp");
 					} else if (i < divNumH && j == divNumW && remainderW > 0 && remainderH == 0) {
-						//¸ßÕı³££¬ÓĞ¶àÓà¿íÇé¿ö£¨¼´´ËÇé¿öÏÂÒ»ĞĞÖĞµÄ×îºóÒ»ÁĞ£©
+						//é«˜æ­£å¸¸ï¼Œæœ‰å¤šä½™å®½æƒ…å†µï¼ˆå³æ­¤æƒ…å†µä¸‹ä¸€è¡Œä¸­çš„æœ€åä¸€åˆ—ï¼‰
 						int[][][] lastImgW = new int[n][remainderW + p][3];
 						for (int k = 0; k < n; k++) {
 							for (int l = 0; l < (remainderW + p); l++) {
@@ -147,15 +147,15 @@ public class ImageProcesser {
 						Image.saveImage(lastImgW, tempDirectory + "div" + (i + 1) + "-" + (j + 1) + ".bmp");
 					} else {
 					/*
-					  ¶ÔÓÚÓĞ¶àÓàµÄ´¦ÀíµÄÏë·¨£º¾¡¿ÉÄÜÍê³ÉÖ¸¶¨ÈÎÎñ£¬¼´£¬¼´Ê¹¿í»ò¸ßÓĞ¶àÓàÒ²µ¼³ö£¬ÖØµşÒ²¾¡¿ÉÄÜÍê³É¡£Òò´Ë
-				      ¿ÉÄÜ³öÏÖÒ»ĞĞµÄ×îºó¼¸ÕÅ»òÊÇ×îºóÒ»ĞĞµÄ¿í¸ßÓëÇ°Ğ©ÕÅ²»Í¬¡£´ËÊ±£º
-					  1.Ò»ĞĞµÄ×îºóÒ»ÕÅ£ºÖ¸¶¨µÄºáÏòÖØµşÏñËØ+ºáÏò¶àÓàÏñËØ¡£
-					  2.×îºóÒ»ĞĞ£ºÖ¸¶¨µÄ×İÏòÖØµşÏñËØ+×İÏò¶àÓàÏñËØ¡£
-					  3.×îºóÒ»ĞĞ×îºóÒ»ÕÅ£º£¨Ö¸¶¨µÄºáÏòÖØµşÏñËØ+ºáÏò¶àÓàÏñËØ£©x£¨Ö¸¶¨µÄ×İÏòÖØµşÏñËØ+×İÏò¶àÓàÏñËØ£©
+					  å¯¹äºæœ‰å¤šä½™çš„å¤„ç†çš„æƒ³æ³•ï¼šå°½å¯èƒ½å®ŒæˆæŒ‡å®šä»»åŠ¡ï¼Œå³ï¼Œå³ä½¿å®½æˆ–é«˜æœ‰å¤šä½™ä¹Ÿå¯¼å‡ºï¼Œé‡å ä¹Ÿå°½å¯èƒ½å®Œæˆã€‚å› æ­¤
+				      å¯èƒ½å‡ºç°ä¸€è¡Œçš„æœ€åå‡ å¼ æˆ–æ˜¯æœ€åä¸€è¡Œçš„å®½é«˜ä¸å‰äº›å¼ ä¸åŒã€‚æ­¤æ—¶ï¼š
+					  1.ä¸€è¡Œçš„æœ€åä¸€å¼ ï¼šæŒ‡å®šçš„æ¨ªå‘é‡å åƒç´ +æ¨ªå‘å¤šä½™åƒç´ ã€‚
+					  2.æœ€åä¸€è¡Œï¼šæŒ‡å®šçš„çºµå‘é‡å åƒç´ +çºµå‘å¤šä½™åƒç´ ã€‚
+					  3.æœ€åä¸€è¡Œæœ€åä¸€å¼ ï¼šï¼ˆæŒ‡å®šçš„æ¨ªå‘é‡å åƒç´ +æ¨ªå‘å¤šä½™åƒç´ ï¼‰xï¼ˆæŒ‡å®šçš„çºµå‘é‡å åƒç´ +çºµå‘å¤šä½™åƒç´ ï¼‰
 					*/
-						//ÓĞ¶àÓà¸ßÇé¿ö
+						//æœ‰å¤šä½™é«˜æƒ…å†µ
 						if (i < divNumH && j == divNumW && remainderW > 0) {
-							//¿í¸ß¾ùÓĞ¶àÓàÇé¿öÏÂ×îºóÒ»ÁĞÖĞ¸ßÕı³£¿í¶àÓàµÄ£¨¼´×îºóÒ»ÁĞ³ı×îºóÒ»ÕÅ£©
+							//å®½é«˜å‡æœ‰å¤šä½™æƒ…å†µä¸‹æœ€åä¸€åˆ—ä¸­é«˜æ­£å¸¸å®½å¤šä½™çš„ï¼ˆå³æœ€åä¸€åˆ—é™¤æœ€åä¸€å¼ ï¼‰
 							int[][][] lastImgW = new int[n][remainderW + p][3];
 							for (int k = 0; k < n; k++) {
 								for (int l = 0; l < (remainderW + p); l++) {
@@ -165,9 +165,9 @@ public class ImageProcesser {
 							Image.saveImage(lastImgW, tempDirectory + "div" + (i + 1) + "-" + (j + 1) + ".bmp");
 						}
 						if (i == divNumH) {
-							//ÓĞ¶àÓà¸ßÇé¿öµÄ×îºóÒ»ĞĞ
+							//æœ‰å¤šä½™é«˜æƒ…å†µçš„æœ€åä¸€è¡Œ
 							if (j < divNumW) {
-								//ÓĞ¶àÓà¸ß£¬×îºóÒ»ĞĞ×ÓÍ¼¸ß¶ÈÓëÖ¸¶¨²»Í¬£¬µ«¿í¶ÈÏàÍ¬Ê±Çé¿ö
+								//æœ‰å¤šä½™é«˜ï¼Œæœ€åä¸€è¡Œå­å›¾é«˜åº¦ä¸æŒ‡å®šä¸åŒï¼Œä½†å®½åº¦ç›¸åŒæ—¶æƒ…å†µ
 								int[][][] lastImgH = new int[remainderH + q][m][3];
 								for (int k = 0; k < (remainderH + q); k++) {
 									for (int l = 0; l < m; l++) {
@@ -176,7 +176,7 @@ public class ImageProcesser {
 								}
 								Image.saveImage(lastImgH, tempDirectory.getAbsolutePath() + "div" + (i + 1) + "-" + (j + 1) + ".bmp");
 							} else if (j == divNumW && remainderW > 0) {
-								//ÓĞ¶àÓà¸ß£¬×îºóÒ»ĞĞ×ÓÍ¼¸ß¶ÈÓëÖ¸¶¨²»Í¬£¬¿í¶ÈÒ²²»Í¬£¨¼´×îºóÒ»ÕÅ£©
+								//æœ‰å¤šä½™é«˜ï¼Œæœ€åä¸€è¡Œå­å›¾é«˜åº¦ä¸æŒ‡å®šä¸åŒï¼Œå®½åº¦ä¹Ÿä¸åŒï¼ˆå³æœ€åä¸€å¼ ï¼‰
 								int[][][] lastImgW = new int[remainderH + q][remainderW + p][3];
 								for (int k = 0; k < (remainderH + p); k++) {
 									for (int l = 0; l < (remainderW + q); l++) {
@@ -192,7 +192,7 @@ public class ImageProcesser {
 		}
 	}
 
-	/*¢Ü·Å´óÍ¼Æ¬*/
+	/*â‘£æ”¾å¤§å›¾ç‰‡*/
 	public void magnify(int mulriple) {
 		int width = image.getWidth();
 		int height = image.getHeight();
@@ -215,7 +215,7 @@ public class ImageProcesser {
 		magnify(2);
 	}
 
-	/*¢İËõĞ¡Í¼Æ¬*/
+	/*â‘¤ç¼©å°å›¾ç‰‡*/
 	public void shrink(int mulriple) {
 		int width = image.getWidth();
 		int height = image.getHeight();
